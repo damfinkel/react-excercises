@@ -1,8 +1,8 @@
-import Array from './components/Array'
+import ReferenceIdentity from './components/ReferenceIdentity';
 
 function App() {
   return (
-    <Array />
+    <ReferenceIdentity />
   );
 }
 
