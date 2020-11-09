@@ -1,8 +1,8 @@
-import ReferenceIdentity from './components/ReferenceIdentity';
+import Algorithms from './components/Algorithms/index';
 
 function App() {
   return (
-    <ReferenceIdentity />
+    <Algorithms />
   );
 }
 
