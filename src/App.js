@@ -1,8 +1,8 @@
-import Algorithms from './components/Algorithms/index';
+import Counter from './components/Counter';
 
 function App() {
   return (
-    <Algorithms />
+    <Counter />
   );
 }
 
