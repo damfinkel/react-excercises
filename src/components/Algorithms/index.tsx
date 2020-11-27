@@ -6,23 +6,24 @@ import './styles.css';
 // e.g. unique("hello") --> false
 // e.g. unique("algorithm") --> true
 function Algorithms(){
-  const [name, setName] = useState('');
+  const [word, setWord] = useState('');
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    unique(e.target.values);
   }
 
   const unique = ({value}: any) => {
-    let result = 'Es única';
+    let result = true;
     const wordArray = value.split('');
     for (let j=0; j < wordArray.length; j ++) {
       const letter = wordArray[j];
       for (let i=j+1; i < wordArray.length; i ++) {
         if(letter === wordArray[i]) {
-          result = 'No es única'
+          result = false;
         }
       }
     }
-    console.log(result)
+    return result;
   }
   // doble for
   // casos bordes  - condiciones a cumplir para que no se rompe
@@ -32,7 +33,7 @@ function Algorithms(){
   // otro componente con dos inputs
 
   const handleChange = ({value}: any) => {
-    setName(value);
+    setWord(value);
     console.log(value)
   }
 
@@ -40,7 +41,7 @@ function Algorithms(){
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
         <h1>Palabras únicas</h1>
-        <input type="text" name={name} onChange={e => handleChange(e.target)} className="input"/>
+        <input type="text" name={word} placeholder="Ingrese una palabra" onChange={e => handleChange(e.target)} className="input"/>
         <button type="submit" className="button">Verificar</button>
       </form>
       <p>Es única:</p>
